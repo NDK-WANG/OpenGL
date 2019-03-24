@@ -23,6 +23,7 @@ import Util.TimeUtil;
 public class MainActivity extends AppCompatActivity{
     private Player player;
     private TextView tvTime;
+    //OpenGL画布 如果需要视频则在xml创建
     private GLSurface glSurface;
     private SeekBar seekBar;
     private  int position;
@@ -38,6 +39,7 @@ public class MainActivity extends AppCompatActivity{
 
         glSurface=findViewById(R.id.glSurfaceView);
         seekBar=findViewById(R.id.seekBar);
+        //传入画布
         player.setGlSurface(glSurface);
 
         player.setOnPreparedListener(new OnPreparedListener() {
@@ -105,6 +107,7 @@ public class MainActivity extends AppCompatActivity{
     }
 
     public void begin(View view) {
+        //设置数据源
         player.setSource("/mnt/shared/Other/Love.mp4");
         player.Prepared();
     }
